@@ -1,7 +1,9 @@
 `注册`
+
 |URL|Header|Method|
 | :--- | :-- | :-- |
 |/api/v1.0/signup/ |无| POST|
+
 **POST data(json):**
 ```
 {
@@ -16,9 +18,11 @@
 }
 ```
 `登录`
+
 |URL|Header|Method|
 | :--- | :-- | :-- |
 |/api/v1.0/signin/ |无| POST|
+
 **POST data(json):**
 ```
 {
@@ -34,9 +38,11 @@
 ```
 
 `获取用户名字`
+
 |URL|Header|Method|
 | :--- | :-- | :-- |
 |/api/v1.0/`<int:id>`/ |无| GET|
+
 **Return data(json):**
 ```
 {
@@ -45,9 +51,11 @@
 ```
 
 `修改用户名字`
+
 |URL|Header|Method|
 | :--- | :-- | :-- |
 |/api/v1.0/`<int:id>`/ |无| PUT|
+
 **PUT data(json):**
 ```
 {
