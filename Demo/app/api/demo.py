@@ -13,6 +13,16 @@ def getname(id):
             user = User.query.filter_by(id=uid).first()
             return jsonify({
                         "username":user.username
-                   })
+                    })
 
-#@api.route('//')
+@api.route('/<int:id>/',methods=['PUT'])
+def changename(id):
+    if request.method == 'PUT':
+        newname = request.get_json().get('username')
+        uid = id
+        if User.query.filter_by(id=uid).first():
+            user = User.query.filter_by(id=uid).first()
+            user.username = newname
+            return jsonify({
+                        "message":"modify"    
+                    })
