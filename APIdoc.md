@@ -33,7 +33,7 @@
 **Return data(json):**
 ```
 {
-    "message":"login"
+    "token":String
 }
 ```
 
@@ -41,7 +41,7 @@
 
 |URL|Header|Method|
 | :--- | :-- | :-- |
-|/api/v1.0/`<int:id>`/ |无| GET|
+|/api/v1.0/`<int:id>`/ |Authorization:Basic Base64Token| GET|
 
 **Return data(json):**
 ```
@@ -54,7 +54,7 @@
 
 |URL|Header|Method|
 | :--- | :-- | :-- |
-|/api/v1.0/`<int:id>`/ |无| PUT|
+|/api/v1.0/`<int:id>`/ |Authorization:Basic Base64Token| PUT|
 
 **PUT data(json):**
 ```
