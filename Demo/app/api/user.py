@@ -21,11 +21,11 @@ def signup():
             })
 
 @api.route('/signin/', methods=['POST'])
-def login():
-    email = request.get_json().get("email")
+def signin():
+    name = request.get_json().get("username")
     password = request.get_json().get("password")
     try:
-        user = User.query.filter_by(email=email).first()
+        user = User.query.filter_by(username = name).first()
     except:
         user = None
         uid = None
