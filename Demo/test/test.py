@@ -9,6 +9,7 @@ import base64
 db = SQLAlchemy()
 number = random.randint(1,9999)
 
+
 class BasicTestCase(unittest.TestCase):
 
     def setUp(self):
