@@ -49,6 +49,9 @@ class BasicTestCase(unittest.TestCase):
                 content_type = 'application/json')
         self.assertTrue(response.status_code == 200)
         
+        global ID
+        ID = json.loads(response.data)['uid']
+
         token = json.loads(response.data)['token']
         global B64TOKEN
         B64TOKEN = str(base64.b64encode(token))
@@ -56,7 +59,7 @@ class BasicTestCase(unittest.TestCase):
     #Test GET 
     def test_c_getname(self):
         response = self.client.get(
-            url_for('api.getname',_external=True),
+            url_for('api.getname',id=ID,_external=True),
             headers = { "Authorization":"Basic" + B64TOKEN},
             content_type = 'application/json')
         self.assertTrue(response.status_code == 200)
@@ -64,7 +67,7 @@ class BasicTestCase(unittest.TestCase):
     #Test POST
     def test_c_changename(self):
         response = self.client.put(
-            url_for('api.changename',_external=True),
+            url_for('api.changename',id=ID,_external=True),
             headers = { "Authorization":"Basic" + B64TOKEN},
             data = json.dumps({
                 "username":str(number*2)
