@@ -5,7 +5,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from app.models import User
 import json
 
-@api.route('/getname/<int:id>',methods=['GET'])
+@api.route('/<int:id>',methods=['GET'])
 def getname(id):
     if request.method == 'GET':
         uid = id
@@ -13,4 +13,6 @@ def getname(id):
             user = User.query.filter_by(id=uid).first()
             return jsonify({
                         "username":user.username
-                    })
+                   })
+
+#@api.route('//')

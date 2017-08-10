@@ -67,7 +67,7 @@ class BasicTestCase(unittest.TestCase):
     #Test POST
     def test_c_changename(self):
         response = self.client.put(
-            url_for('api.changename',_external=True),
+            url_for('api.changename',id=ID,_external=True),
             headers = { "Authorization":"Basic" + B64TOKEN},
             data = json.dumps({
                 "username":str(number*2)
